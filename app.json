@@ -1,24 +1,38 @@
 {
   "expo": {
-    "name": "HH",
-    "slug": "HH",
+    "name": "Live Captions",
+    "slug": "live-captions",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Live Captions uses the microphone to show speech as text on screen."
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#101114",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "permissions": ["RECORD_AUDIO"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Live Captions uses the microphone to show speech as text on screen.",
+          "recordAudioAndroid": true,
+          "enableBackgroundRecording": false
+        }
+      ]
+    ]
   }
 }
